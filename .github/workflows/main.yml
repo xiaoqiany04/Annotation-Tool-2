@@ -26,8 +26,8 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --onefile --hidden-import gradio --collect-data safehttpx --collect-data gradio app_new.py
-
+        pyinstaller --hidden-import gradio --collect-all gradio --collect-all safehttpx --collect-all groovy --collect-all fastapi --collect-all uvicorn --collect-all starlette --collect-all pydantic --collect-all jinja2 --collect-all altair app_new.py
+        
     - name: Upload EXE
       uses: actions/upload-artifact@v4
       with:
