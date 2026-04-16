@@ -27,9 +27,9 @@ jobs:
     - name: Build with PyInstaller
       run: |
         pyinstaller --hidden-import gradio --collect-all gradio --collect-all safehttpx --collect-all groovy --collect-all fastapi --collect-all uvicorn --collect-all starlette --collect-all pydantic --collect-all jinja2 --collect-all altair app_new.py
-        
-    - name: Upload EXE
+
+    - name: Upload EXE Folder
       uses: actions/upload-artifact@v4
       with:
-        name: AnnotationTool
-        path: dist/app_new.exe
+        name: AnnotationTool-FastVersion
+        path: dist/app_new
