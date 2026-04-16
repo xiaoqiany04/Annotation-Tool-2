@@ -26,7 +26,7 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --onefile --hidden-import gradio app_new.py
+        pyinstaller --onefile --hidden-import gradio --collect-data safehttpx --collect-data gradio app_new.py
 
     - name: Upload EXE
       uses: actions/upload-artifact@v4
