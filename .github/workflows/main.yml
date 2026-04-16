@@ -22,11 +22,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        pip install -r requirements.txt
+        pip install gradio    # 🌟 修改点：直接安装 gradio，不要 requirements.txt 了！
 
     - name: Build with PyInstaller
       run: |
-        # 使用 --onefile 打包，--hidden-import 确保 gradio 不缺依赖
         pyinstaller --onefile --hidden-import gradio app_new.py
 
     - name: Upload EXE
